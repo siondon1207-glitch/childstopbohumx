@@ -1,23 +1,1008 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "태아보험 환급형 가입 비교 및 전문 컨설팅 서비스",
+          "description": "2026년 기준 현대해상, KB, DB, 메리츠, 삼성 등 주요 보험 브랜드의 태아보험 환급형 및 순수보장형 가격을 투명하게 비교하고 개인화된 무료 맞춤 견적 계산을 지원하는 웹 플랫폼.",
+          "provider": {
+            "@type": "Organization",
+            "name": "태아보험 다이렉트 분석 센터",
+            "url": "https://insurance.reliabledone.com"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "대한민국 전 지역"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "태아보험 맞춤 설계 종류",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "실속형 30세만기 순수보장형",
+                  "description": "합리적인 월 요금으로 소아암, 선천이상 등 핵심적인 위험에 집중하는 실속 가입 상품"
+                },
+                "price": "35000",
+                "priceCurrency": "KRW"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "안정형 100세만기 무해지환급형",
+                  "description": "평생 동안 안심할 수 있는 장기 보장과 함께 납입 완료 후 높은 해지환급률을 제공하는 대표 브랜드 베스트셀러 모델"
+                },
+                "price": "85000",
+                "priceCurrency": "KRW"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "만기환급형 프리미엄 태아보험",
+                  "description": "보장을 든든히 챙기면서 만기 도래 시 납입 보험료 전액 또는 일부를 예상 금액에 맞춰 돌려받는 저축 결합형 플랜"
+                },
+                "price": "120000",
+                "priceCurrency": "KRW"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "태아보험 환급형과 순수보장형의 가장 뚜렷한 차이점은 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "환급형은 매월 납입하는 보장료 외에 일정액의 적립보험료를 추가로 납입하여, 만기 도래 시 또는 해지 시점에 원금의 일부 혹은 전부를 돌려받는 방식입니다. 반면 순수보장형은 오로지 위험 보장에만 재원이 쓰여 만기 시 소멸하지만 월 납입 비용이 훨씬 저렴하다는 장점이 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "2026년 기준 태아보험 최적의 가입 시기는 언제인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "보험사들이 제공하는 선천이상 수술비, 신생아 질병 입원일당, 인큐베이터 이용료 등 태아 특약 혜택을 온전히 받기 위해서는 임신 사실 확인 후 22주 이내에 가입 신청을 완료하는 것이 가장 안전한 방법입니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* 부드럽고 따뜻하며 다채로운 육아/태아보험 테마의 스타일 시트 */
+        :root {
+            --primary-color: #E27B75; /* 부드러운 살구빛 웜 로즈 */
+            --secondary-color: #F8B486; /* 따스한 피치 오렌지 */
+            --accent-color: #6C9BC0; /* 편안한 소프트 스카이 블루 */
+            --bg-color: #FDFBF7; /* 아주 부드러운 웜 아이보리톤 배경 */
+            --card-bg: #FFFFFF;
+            --text-color: #2D3142; /* 가독성을 위한 고급스러운 차콜 브라운 */
+            --muted-text: #666D7D;
+            --border-color: #F0E6DD;
+            --success-color: #88B04B; /* 자연 친화적 소프트 민트그린 */
+        }
+
+        body {
+            font-family: "Noto Sans KR", "Pretendard", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.9;
+            word-break: keep-all;
+        }
+
+        header {
+            background: linear-gradient(135deg, #FFEFE7 0%, #FFF5F0 50%, #E8F1F5 100%);
+            color: var(--text-color);
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid var(--border-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.15rem;
+            font-weight: 400;
+            margin-top: 1rem;
+            color: var(--muted-text);
+        }
+
+        nav {
+            margin-top: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        nav a {
+            color: var(--muted-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFFFFF;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            box-shadow: 0 10px 30px rgba(184, 150, 131, 0.08);
+            border-radius: 16px;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            padding-left: 0.8rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* 비교 표 스타일 구조 */
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 600px;
+        }
+
+        .comparison-table th {
+            background-color: #FFF5F1;
+            color: var(--primary-color);
+            font-weight: 700;
+            padding: 1.1rem;
+            text-align: left;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .comparison-table td {
+            padding: 1.1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #FCF9F6;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #FFF0EB;
+        }
+
+        /* FAQ 아코디언 스타일 */
+        .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            background-color: #FCFAF7;
+        }
+
+        .accordion-header {
+            padding: 1.2rem;
+            font-weight: 700;
+            background-color: #FFFFFF;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-color);
+            transition: background-color 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #FFF8F5;
+        }
+
+        .accordion-content {
+            padding: 1.2rem;
+            background-color: #FCFAF7;
+            border-top: 1px solid var(--border-color);
+            display: none;
+            font-size: 0.95rem;
+            color: #555A6B;
+        }
+
+        /* 가상 그래프 영역 스타일 */
+        .chart-box {
+            background: linear-gradient(135deg, #FAFAF9 0%, #F5F1EC 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+
+        .chart-bar-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chart-bar-item {
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .chart-bar-label {
+            width: 150px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .chart-bar-track {
+            flex-grow: 1;
+            background-color: #E6E0DA;
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: #FFFFFF;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: width 1s ease-out;
+        }
+
+        .bg-coral { background-color: var(--primary-color); }
+        .bg-peach { background-color: var(--secondary-color); }
+        .bg-blue { background-color: var(--accent-color); }
+
+        /* 다차원 사용자 체류형 대용량 모의 계산기 서식 */
+        .calculator-section {
+            background-color: #FFFDFB;
+            border: 2px solid var(--primary-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 24px rgba(226, 123, 117, 0.06);
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .calculator-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calculator-group label {
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .calculator-group select,
+        .calculator-group input[type="range"],
+        .calculator-group input[type="number"] {
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .calculator-group select:focus,
+        .calculator-group input[type="number"]:focus {
+            border-color: var(--primary-color);
+        }
+
+        .rider-checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            background-color: #FCF9F6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .checkbox-item input {
+            accent-color: var(--primary-color);
+            width: 17px;
+            height: 17px;
+        }
+
+        .calc-button {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(226, 123, 117, 0.3);
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .calc-button:hover {
+            background-color: #D1645D;
+            transform: translateY(-2px);
+        }
+
+        .calc-result-box {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            border-radius: 12px;
+            background-color: #F8FBFD;
+            border: 1px solid #DFEDF5;
+            display: none;
+        }
+
+        .result-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1.2rem;
+            border-bottom: 1.5px solid #D2E3ED;
+            padding-bottom: 0.5rem;
+        }
+
+        .result-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .result-item {
+            background-color: #FFFFFF;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #EAF2F6;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .result-item span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            margin-bottom: 0.3rem;
+        }
+
+        .result-item strong {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        /* 공식 사이트 및 신뢰 영역 링크 스타일 */
+        .reference-box {
+            background-color: #F8F9FA;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-top: 3rem;
+        }
+
+        .reference-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.8rem;
+            background-color: #FFFFFF;
+            border: 1px solid #EAEAEA;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .reference-link:hover {
+            border-color: var(--accent-color);
+            background-color: #F7FBFC;
+            color: var(--accent-color);
+        }
+
+        .keyword-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 2rem 0;
+        }
+
+        .keyword-tag {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 15px;
+            background-color: #F5EFEB;
+            color: #7A6960;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .keyword-tag:hover {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            font-size: 0.9rem;
+            color: var(--muted-text);
+            background-color: #F4ECE6;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .moms-tip {
+            background-color: #FFFBF0;
+            border-left: 4px solid #F3C63F;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+
+        .moms-tip h4 {
+            margin: 0 0 0.5rem 0;
+            color: #C39200;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .moms-tip p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #615842;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>태아보험 환급형 완벽 분석 및 2026년 최신 가입 안내</h1>
+        <p>순수보장형과의 차이점부터 전국 지역별 성지 좌표 팁과 다이렉트 자가 예상 계산기 수록</p>
+        <nav>
+            <ul>
+                <li><a href="#section-intro">태아보험 가이드</a></li>
+                <li><a href="#section-types">환급형 vs 순수보장형</a></li>
+                <li><a href="#section-maturity">30세 vs 100세만기</a></li>
+                <li><a href="#section-regional">전국 지역별 트렌드</a></li>
+                <li><a href="#section-calc">다이렉트 요금 계산기</a></li>
+                <li><a href="#section-reviews">온라인 내돈내산 후기</a></li>
+                <li><a href="#section-ai-guide">AI 스마트 가입 방법</a></li>
+                <li><a href="#section-faq">자주 묻는 질문 FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        
+        <section id="section-intro">
+            <h2>태아보험 환급형 안내: 예비 부모가 필수로 알아야 하는 첫걸음</h2>
+            <p>사랑하는 자녀의 탄생을 기다리는 예비 부모에게 있어 <strong>태아보험 가입</strong>은 임신 중 반드시 마쳐야 하는 중요한 준비 과정입니다. 2026년 현재 고령 임신의 비율이 점진적으로 증가하면서 선천성 질환이나 조산으로 인한 인큐베이터 이용료, 신생아 질병 입원일당 등의 보장 니즈는 날이 갈수록 확대되고 있습니다. 이때 예비 부모들이 직면하는 가장 큰 고민 중 하나가 바로 <strong>태아보험 환급형</strong> 상품과 소멸성 순수보장형 상품 사이에서의 선택입니다.</p>
+            
+            <p>환급형이란 매월 지불하는 월 요금 속에 장기 적립을 목적으로 하는 적립보험료를 부가하여 납입 기간이 끝나거나 자녀의 만기가 도래했을 때 원금의 일부 혹은 전부를 돌려받는 종류의 상품을 뜻합니다. 보장성은 그대로 유지하면서 추후 목돈 마련까지 기약할 수 있다는 점에서 매력적으로 보이지만, 월 납입 부담이 대폭 증가한다는 단점이 공존합니다. 따라서 단순히 사은품 혜택이나 화려한 광고 문구에 현혹되기보다는 구체적인 가격 모델과 예산을 면밀하게 계산하여 다이렉트로 실속 있게 마련하는 것이 현명합니다.</p>
+
+            <div class="keyword-tags">
+                <a href="#section-types" class="keyword-tag">태아보험 환급형 가격</a>
+                <a href="#section-calc" class="keyword-tag">태아보험 얼마 요금제</a>
+                <a href="#section-calc" class="keyword-tag">다이렉트 최저가 계산기</a>
+                <a href="#section-regional" class="keyword-tag">서울 태아보험 성지</a>
+                <a href="#section-regional" class="keyword-tag">부산 태아보험 추천</a>
+                <a href="#section-reviews" class="keyword-tag">내돈내산 태아보험 후기</a>
+                <a href="#section-ai-guide" class="keyword-tag">제미나이 챗지피티 설계</a>
+                <a href="#section-faq" class="keyword-tag">디시인사이드 추천 특약</a>
+            </div>
+        </section>
+
+        <section id="section-types">
+            <h2>태아보험 환급형 vs 순수보장형: 핵심 구조와 장단점 분석</h2>
+            <p>태아를 위한 건강 자산을 마련하는 과정에서 만기환급형 상품과 순수보장형 상품의 구조적 차이점을 올바르게 이해하지 못한다면 장기 유지 과정에서 해지 위약금 부담 등의 낭패를 겪을 수 있습니다. 두 종류의 근본적인 차이점은 매월 청구되는 요금이 어떻게 분배되느냐에 있습니다.</p>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>비교 항목</th>
+                            <th>태아보험 환급형 (만기/저해지 환급형 포함)</th>
+                            <th>순수보장형 (소멸성 보장형)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>상품 정의</strong></td>
+                            <td>위험 보장료에 미래 환급용 적립 보험료를 추가해 납입하는 종류</td>
+                            <td>오로지 순수 위험 보장에만 소멸성으로 비용을 지불하는 요금제</td>
+                        </tr>
+                        <tr>
+                            <td><strong>평균 월 요금</strong></td>
+                            <td>평균 80,000원 대에서 150,000원 대 이상으로 비교적 높음</td>
+                            <td>평균 30,000원 대에서 60,000원 대 안팎으로 상대적으로 저렴함</td>
+                        </tr>
+                        <tr>
+                            <td><strong>장점 요약</strong></td>
+                            <td>만기 도래 시 또는 해지 시점에 목돈으로 예상 금액 회수 가능</td>
+                            <td>동일 보장 대비 월 납입 비용 부담이 가장 낮고 심플한 운용</td>
+                        </tr>
+                        <tr>
+                            <td><strong>단점 요약</strong></td>
+                            <td>중도 해지 시 적립금 미달로 인한 손해 발생 위험 및 높은 지불 장벽</td>
+                            <td>만기가 종료되면 납입한 총 보험료가 소멸하여 환급금이 없음</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2026 트렌드</strong></td>
+                            <td>초기 부담을 줄인 저해지 및 무해지 환급형 상품이 제일 높은 순위 기록</td>
+                            <td>인터넷 전용 스마트 다이렉트 채널을 통한 실속형 셀프 설계 증가</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>위의 비교표에서 알 수 있듯이, <strong>태아보험 환급형</strong>은 만기 시 자녀의 대학 입학 자금이나 독립 자금 등의 목돈으로 환산해 활용할 수 있다는 유인 요소가 존재하지만, 동일한 보장을 유지하기 위해 매월 부담해야 하는 금액이 약 2배에서 3배에 달합니다. 장기 유지 확률을 고려했을 때 가계 예산 설계가 흔들려 중도 해지를 감수하게 된다면 도리어 원금 손실을 가져오는 큰 단점이 생깁니다. 따라서 순수 보장만을 저렴한곳 위주로 우선 세팅하고 아낀 비용을 적금이나 주식 등으로 굴리는 것이 더 이롭다는 의견도 온라인 육아 커뮤니티에서 지지를 받고 있습니다.</p>
+
+            <div class="moms-tip">
+                <h4>선배 엄마들의 현실 가이드 팁</h4>
+                <p>화폐가치 하락을 간과해서는 안 됩니다. 지금 계약하는 100세만기 환급형 상품의 원금을 20년에서 80년 뒤에 돌려받는다고 가정할 때, 미래 가치를 현재 가치로 따지면 물가 상승률로 인해 환급 예상 금액의 실질적 효용성이 제일 급격하게 떨어질 우려가 큽니다. 따라서 목적을 뚜렷이 구분해야 합니다.</p>
+            </div>
+        </section>
+
+        <section id="section-maturity">
+            <h2>30세만기 vs 100세만기: 내 아이에게 더 적합한 선택지 찾기</h2>
+            <p>환급형 태아보험을 검토할 때 빼놓을 수 없는 핵심 의사결정 단위는 바로 보장 만기 설정 방법입니다. 자녀가 자립하여 경제적인 주체로 거듭나기 전까지의 위험을 케어하는 30세만기 모델과, 최초 가입 한 번으로 생의 끝자락까지 영위하는 100세만기 모델은 각각 뚜렷한 특징을 가집니다.</p>
+
+            <h3>30세만기의 특징과 타겟층</h3>
+            <p>30세만기는 단기간에 영유아기와 청소년기에 빈발하는 질환들을 빠짐없이 두텁게 보장하는 것에 초점을 둡니다. 보장 기간이 상대적으로 짧아 위험률 산출이 낮게 잡히므로 월 요금이 무척 저렴하며, 만기 환급형으로 설정할 경우 30세 도래 시점에 가입자가 환급금을 무사히 수령하여 독립 자금으로 전해주기 좋습니다. 자녀가 성인이 된 이후 새로운 의료 환경에 맞추어 보장 종류를 다시 리빌딩해 줄 수 있다는 장점이 있습니다.</p>
+
+            <h3>100세만기의 특징과 타겟층</h3>
+            <p>100세만기는 아이가 자라 평생을 살아가는 동안 발생할 수 있는 주요 3대 질병인 암, 뇌혈관 질환, 심장 질환 진단비 등을 태아 시점의 저렴한 연령 요율로 묶어 평생 유지하는 장점이 있습니다. 다만, 자녀가 성장하면서 새로운 질병 종류나 선진 수술법이 지속해서 개발될 텐데, 2026년 이전에 마련한 오래된 보장 특약으로 100세까지 완벽히 버티기는 어려울 수도 있습니다. 또한 100세만기 만기환급형은 매칭되는 적립금 비중으로 인해 월 보장 지불 비용 자체가 매우 비싸집니다.</p>
+        </section>
+
+        <section id="section-regional">
+            <h2>2026년 전국 임산부 가입 트렌드: 지역별 선호 모델과 견적 팁</h2>
+            <p>대한민국의 각 지방자치단체 및 거주 지역의 교육 인프라, 평균 소득 격차, 다자녀 출산 보조 정책에 따라 예비 부모들이 선호하는 태아보험 요금 설계 및 사은품 혜택 또한 뚜렷하게 달라집니다. 특히 가계 자금 관리에 민감한 주요 주거 특구를 중심으로 가입 성지와 우대 매칭 성향이 나타나고 있습니다.</p>
+
+            <p>전국 임산부들의 지역별 가입 경향을 구체적으로 살펴보면 각 도시의 특성과 소득 흐름에 긴밀히 상응합니다. 대표적으로 서울특별시 중심부인 강남구, 송파구 및 경기도의 대표적인 신도시 학군지인 분당, 일산, 평택, 수원 지역에서는 자녀의 평생 안전망 확보를 지향하여 100세만기 환급형 명품 브랜드를 제일 먼저 추천받고 높은 납입 금액대의 견적을 기꺼이 선택하는 경향을 보여줍니다. 이에 반해 실용적 자금 운용을 추구하는 충청남도 천안, 충청북도 청주, 전북특별자치도 전주, 전라남도 여수 등의 지역에서는 보장에 중심을 두고 아낀 비용은 고스란히 자녀 전용 예금으로 투자하기 위해 실속형 소멸 상품과 30세만기 요금제를 선호하는 빈도가 높습니다.</p>
+
+            <p>산업 구조가 탄탄한 경상북도 구미나 경상남도 창원의 대형 공단 배후 주거단지 거주자들은 입원일당이나 수술비 특약을 탄탄하게 다져 실제 청구 혜택을 늘리는 비대면 다이렉트 실무 설계를 반기며, 부산광역시 해운대구, 대구광역시 수성구, 대전광역시 유성구, 광주광역시 광산구, 울산광역시 남구와 같은 지방 대표 광역시의 핵심 상권 인근에서는 무해지 환급 종류를 비교적 낮은 최저가 요율로 골라 장기 보장으로 이어가는 방법이 주류를 이루고 있습니다. 그 외에도 세종특별자치시와 강원도 원주, 강원도 춘천 및 제주특별자치도 제주시 등 다자녀 지원 혜택이 강화된 거점 도시에서는 20대, 30대, 40대 임산부의 가입 나이별 맞춤 할인을 폭넓게 적용할 수 있는 전문 설계 업체의 오프라인 또는 인터넷 상담 채널 좌표 공유가 지역 임산부 커뮤니티에서 매우 활발하게 전개되고 있습니다. 최근에는 인천광역시 연수구 송도 등 젊은 맞벌이 부부들이 대거 밀집한 지역에서 가입 사은품 성지로 등극하여 백화점 상품권이나 고가 아기띠, 유모차를 효율적으로 챙길 수 있는 스마트 좌표를 네이버 블로그 등에서 실시간 정보로 상호 공유하고 있는 양상입니다.</p>
+        </section>
+
+        <section id="section-calc">
+            <h2>대용량 실시간 다이렉트 태아보험 자가 견적 계산기</h2>
+            <p>정확히 얼마 정도의 금액이 매월 청구되며, 만기 예상 시점의 가상 환급률은 어떻게 되는지 궁금하신가요? 아래 모의 계산기를 통해 본인에게 최적화된 브랜드 상품 및 사은품 조건을 테스트해 보시고 맞춤형 장단점 보고서를 가상으로 도출해 보세요. 체류하여 여러 조합을 변경하면서 가장 이상적인 요금 수준을 자가 점검해 보실 수 있습니다.</p>
+            
+            <div class="calculator-section">
+                <div class="calculator-grid">
+                    <div class="calculator-group">
+                        <label for="calc-mother-age">산모 연령 선택 (우대 요율 적용)</label>
+                        <select id="calc-mother-age">
+                            <option value="20">20대 임산부 (추가 우대 할인)</option>
+                            <option value="30" selected>30대 임산부 (표준 요율 적용)</option>
+                            <option value="40">40대 임산부 (집중 정밀 보장 필요)</option>
+                        </select>
+                    </div>
+
+                    <div class="calculator-group">
+                        <label for="calc-weeks">현재 임신 주차 정보</label>
+                        <select id="calc-weeks">
+                            <option value="12">임신 1주차 ~ 12주차 (최적 가입기)</option>
+                            <option value="22" selected>임신 13주차 ~ 22주차 (특약 한계 직전)</option>
+                            <option value="23">임신 23주차 이상 (일부 태아특약 제한)</option>
+                        </select>
+                    </div>
+
+                    <div class="calculator-group">
+                        <label for="calc-region">거주 지역 선택 (지자체 매칭)</label>
+                        <select id="calc-region">
+                            <option value="seoul">서울특별시 및 수도권 지역</option>
+                            <option value="metro">지방 주요 광역시</option>
+                            <option value="local">세종, 강원, 제주 등 지방 혁신도시</option>
+                        </select>
+                    </div>
+
+                    <div class="calculator-group">
+                        <label for="calc-brand">희망하는 보험사 브랜드 모델</label>
+                        <select id="calc-brand">
+                            <option value="hyundai">현대해상 굿앤굿어린이보험</option>
+                            <option value="db">DB손해보험 아이러브건강보험</option>
+                            <option value="kb">KB손해보험 희망플러스어린이</option>
+                            <option value="meritz">메리츠화재 내맘같은어린이</option>
+                            <option value="samsung">삼성화재 다이렉트 태아플랜</option>
+                        </select>
+                    </div>
+
+                    <div class="calculator-group">
+                        <label for="calc-type">원하는 만기 및 환급금 종류</label>
+                        <select id="calc-type">
+                            <option value="pure">순수보장형 (만기 환급 없음, 최저가)</option>
+                            <option value="low-refund">저해지 및 무해지 환급형 (가성비 우수)</option>
+                            <option value="full-refund">100% 만기환급형 (목돈 마련 연계)</option>
+                        </select>
+                    </div>
+
+                    <div class="calculator-group">
+                        <label for="calc-maturity">희망 보장 만기 기간</label>
+                        <select id="calc-maturity">
+                            <option value="30">30세 만기 (자립 독립 시점 전환)</option>
+                            <option value="100">100세 만기 (평생 보장 고정형)</option>
+                        </select>
+                    </div>
+
+                    <div class="calculator-group" style="grid-column: span 2;">
+                        <label for="calc-budget">희망 가이드 월 요금 한도: <span id="budget-value" style="color:var(--primary-color); font-weight:700;">60,000</span>원</label>
+                        <input type="range" id="calc-budget" min="30000" max="200000" step="10000" value="60000" style="width: 100%;">
+                    </div>
+                </div>
+
+                <div class="rider-checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="rider-선천" checked>
+                        선천이상 수술비/진단비 특약
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="rider-저체중" checked>
+                        저체중아 인큐베이터 입원일당
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="rider-질병">
+                        신생아 뇌혈관 및 심장 집중 케어
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="rider-실비" checked>
+                        단독 실손 의료비 보장 결합
+                    </label>
+                </div>
+
+                <button type="button" class="calc-button" onclick="calculatePremium()">실시간 예상 견적 결과 리포트 출력하기</button>
+
+                <div class="calc-result-box" id="calc-result">
+                    <div class="result-title">입력 조건 기반 가상 시뮬레이션 진단서</div>
+                    <div class="result-details">
+                        <div class="result-item">
+                            <span>권장 예상 월 보험료</span>
+                            <strong id="res-premium">0원</strong>
+                        </div>
+                        <div class="result-item">
+                            <span>만기 시점 예상 환급률</span>
+                            <strong id="res-refund-rate">0%</strong>
+                        </div>
+                        <div class="result-item">
+                            <span>예상 환급 시 수령액</span>
+                            <strong id="res-refund-amount">0원</strong>
+                        </div>
+                        <div class="result-item">
+                            <span>다이렉트 추천 순위 적합도</span>
+                            <strong id="res-grade">우수</strong>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--muted-text); margin-top: 1.5rem; border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+                        본 결과는 입력된 가상의 시나리오를 바탕으로 작성된 비교 예시 자료이며, 피보험자의 세부 상태 및 각 손해보험사의 2026년 공시이율 변동 정책에 따라 실제 가입 시 청구 요금 및 환급 금액은 차이가 날 수 있습니다. 정교한 맞춤 컨설팅은 공식 고객센터 비대면 어플 또는 전문 상담 사이트를 통해 점검하시기 바랍니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-reviews">
+            <h2>인터넷 대형 커뮤니티 내돈내산 리얼 후기 비교 정보</h2>
+            <p>성공적인 자녀 보험 가입을 위해 예비 맘들이 가장 신뢰하는 소스는 바로 동종 업계의 숨김 없는 내돈내산 후기입니다. 디시인사이드 보험 갤러리나 네이버 맘스홀릭 베이비 카페, 에펨코리아(펨코) 및 보배드림 육아 포럼, 그리고 유튜브 채널 등에서 거론되는 실전 경험담들을 종합해 보면 다음과 같은 알짜 가입 성지 판별 기준이 도출됩니다.</p>
+            
+            <p><strong>디시인사이드 맘카페 정보글 요약:</strong> 설계사를 통해 가입할 때 과도한 중복 특약을 가급적 쳐내고 가야 한다는 목소리가 높습니다. 특히 불필요한 시력 교정 특약이나 아주 빈도가 낮은 희귀 난치성 질환 치료비는 과도한 요금 청구의 주범이 되므로, 스스로 분석 어플이나 계산기 프로그램을 돌려보고 최저가 기본 플랜에 실손보험을 결합하는 것이 제일 유리하다고 추천합니다.</p>
+            
+            <p><strong>펨코 및 보배드림 유저들의 분석글 요약:</strong> 사은품 성지로 불리는 일부 좌표들 중에서 현금지원을 약속했다가 잠적하거나 뒤늦게 사은품 및 지원금 지급 요건에 엄청난 고가 요금 가입 조건을 끼워 파는 악덕 업체들이 존재하므로 주의해야 한다고 지적합니다. 공신력 높은 비교 사이트를 통해 공식 고객센터의 관리를 받으면서 법적으로 정당하게 지급받는 상품권이나 정품 기저귀 가방, 유모차 할인 성지에서 진행하는 것이 정신 건강에 유익하다는 조언이 많습니다.</p>
+            
+            <p><strong>인스타그램 해시태그 및 유튜브 전문가 비평 요약:</strong> 최근 트렌드는 임신 확인 즉시 미루지 않고 가입하는 것입니다. 임신 초기에 받는 기형아 선별 검사에서 작은 이상 소견만 나오더라도 가입 심사 단계에서 즉각 승인 거절 처리가 떨어질 수 있기에 1차 기형아 검사를 받기 전 단계인 12주차 이전에 완료하는 것이 가입 승인 확률을 가장 확실히 끌어올리는 노하우라는 후기가 대다수를 차지합니다.</p>
+        </section>
+
+        <section id="section-ai-guide">
+            <h2>AI 시대의 태아보험 설계: 챗지피티와 제미나이 활용 꿀팁</h2>
+            <p>2026년 AI 대중화 시대를 맞이하여, 똑똑한 예비 부모들은 더는 설계사가 가져다주는 수동적인 인쇄물 제안서에만 의존하지 않습니다. 구글의 제미나이(Gemini) 또는 오픈AI의 챗지피티(ChatGPT)를 활용하여 자신의 설계안에 중복되거나 불필요한 비용 낭비 요인이 있는지 똑 소리 나게 분석하여 제거하는 비법이 인기를 끌고 있습니다.</p>
+
+            <div class="chart-box">
+                <h3>주요 보험 브랜드별 2026 선호 순위 분포 모델</h3>
+                <p>예비 가입 임산부들이 선호하는 상위 3대 브랜드의 설계 비율 분석 자료 (가상 통계치)</p>
+                <div class="chart-bar-container">
+                    <div class="chart-bar-item">
+                        <div class="chart-bar-label">현대해상 플랜</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill bg-coral" style="width: 48%;">48%</div>
+                        </div>
+                    </div>
+                    <div class="chart-bar-item">
+                        <div class="chart-bar-label">DB손해보험 플랜</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill bg-peach" style="width: 27%;">27%</div>
+                        </div>
+                    </div>
+                    <div class="chart-bar-item">
+                        <div class="chart-bar-label">KB/메리츠/기타</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill bg-blue" style="width: 25%;">25%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>AI 챗봇에게 가입 설계를 맡기는 실전 방법은 매우 단순합니다. 대리점 등에서 수령한 요금 가이드 설계안을 스마트폰 카메라로 촬영하거나 텍스트를 고스란히 긁어 복사한 뒤, 다음과 같이 질문을 던지면 됩니다. "내가 제안받은 30세 만기 환급형 태아보험 견적서에서 20대 산모 기준 보장 범위가 겹치거나 가성비가 떨어지는 특약이 무엇인지 일목요연하게 찾아줘"라고 프롬프트를 입력하면 AI는 불필요한 아토피 치료비, 소아 중증 질환 복수 연계 등을 찾아내 불필요한 중복 지출을 원천 봉쇄해 줍니다.</p>
+
+            <p>또한 모바일 뱅킹 및 자산 관리용 토스(Toss) 앱 등의 보험 종합 진단 솔루션에 연동해 보거나 전용 가입 플랫폼 어플 등을 통하면 실시간으로 예상 가격 견적을 대조해 볼 수 있습니다. 다만, AI 엔진이 학습한 통계 자료 중 일부는 최신 법률이나 보험감독원의 변경 규정을 온전히 미처 반영하지 못할 위험성이 있으므로 최종 심사 및 확정 승인은 라이선스를 소지한 전속 비교 사이트의 신뢰도 높은 전문 컨설턴트와의 상담 전화를 통하여 최종 검증하는 크로스 체크 과정이 동반되어야 안전합니다.</p>
+        </section>
+
+        <section id="section-faq">
+            <h2>자주 묻는 질문 FAQ 아코디언</h2>
+            <p>태아보장을 준비 중인 모든 초보 엄마 아빠들이 온라인 및 모바일 공간에서 가장 다빈도로 의문을 던지는 4가지 주요 사항에 대해 성실하게 검토하여 구성한 팩트 체크 답변서입니다.</p>
+
+            <div class="accordion-item">
+                <div class="accordion-header" tabindex="0">Q1. 저해지 환급형 상품과 일반 만기환급형의 명확한 차이점은 무엇인가요?</div>
+                <div class="accordion-content">
+                    저해지 환급형은 납입을 이행하는 중도 기간에 부득이하게 해지를 감행할 경우 돌려받을 수 있는 해지환급금이 소액이거나 없는 대신, 계약 만기까지 정상 유지를 완료한다면 일반형과 거의 무방하거나 외려 더 높은 수준의 환급률을 제공하는 실효적 하이브리드 종류의 상품입니다. 이 방식은 일반 완납 환급형 모델에 비해 매달 납입하는 요금 비용이 약 20퍼센트에서 30퍼센트가량 대단히 저렴하다는 최고의 장점이 있습니다.
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" tabindex="0">Q2. 임신 22주가 이미 경과한 뒤에는 가입이 불가능한 것인가요?</div>
+                <div class="accordion-content">
+                    결코 그렇지 않습니다. 보장 가입 자체는 출산 직전까지 상시 신규 신청이 가능합니다. 다만 임신 22주가 지나면 인큐베이터 입원 치료비, 저체중아 출생 진단비, 선천성 장해 수술비 및 다운증후군 관련 특약 등 신생아 생명에 밀접한 영향을 미치는 가장 핵심적인 태아 특약들의 계약 자체가 엄격하게 제한되는 불이익이 생깁니다. 따라서 주차가 늦어졌더라도 즉시 가용한 어린이 기본 요금제를 찾아 설계하는 방법을 추천합니다.
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" tabindex="0">Q3. 법정 사은품이나 현금지원 혜택 한도는 얼마인가요?</div>
+                <div class="accordion-content">
+                    현행 금융감독위원회의 법령에 고지된 보험 가입 시 제공 혜택 가이드는 연간 납입료 총액의 10퍼센트 혹은 최대 3만 원 이내의 사은품만 정당하게 인정하고 있습니다. 간혹 인터넷 온라인 성지 좌표 등에서 제공하는 과도한 수준의 고액 현금 페이백 약속은 차후 적발 시 보험 계약 자체가 취소되거나 해당 설계사가 부당 행위로 처벌을 받으면서 가입 고객도 보장을 전혀 받지 못하는 사태로 번질 위험이 팽배하므로 공식 루트를 따르는 것이 가장 옳습니다.
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" tabindex="0">Q4. 쌍둥이(다태아) 임신의 경우에는 보험료 가격 부담이나 보장에 어떤 차이점이 생기나요?</div>
+                <div class="accordion-content">
+                    쌍둥이 임신은 조산의 빈도와 저체중 출생 비율이 상대적으로 잦기 때문에 보험사에서도 보장 인수 심사가 까다롭습니다. 과거에는 1명의 계약에 2명을 같이 담기 어려웠으나 최근 2026년 상품 트렌드는 두 자녀 각각 개별로 1개씩 단독으로 가입 구성을 짜야 합니다. 이 경우 월 요금의 평균 합계는 단태아 대비 높게 산출되므로 무리한 만기환급형보다는 꼭 필요한 핵심 순수 특약만 꼼꼼히 선택해 최저가 요율을 완성하는 것이 제일 현명합니다.
+                </div>
+            </div>
+        </section>
+
+        <section id="reference-and-trust">
+            <h2>공식 참고 사이트 및 신뢰할 수 있는 공인 기관</h2>
+            <p>다양한 인터넷 루머와 광고성 홍보 좌표 속에서 진정으로 객관적이고 공인된 금융 가이드 및 약관 조회를 희망하신다면 아래의 공인 외부 기관 공식 리소스를 통해 지식을 한층 더 투명하게 다질 수 있습니다.</p>
+            
+            <div class="reference-box">
+                <a href="https://childstopbohumr.directreliable.com" target="_blank" rel="noopener" class="reference-link">
+                    <span>태아보험 환급형 표준 환급 모델 및 약관 해설 페이지 (전문 참조)</span>
+                    <strong>바로가기</strong>
+                </a>
+                <a href="https://namu.wiki/w/%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%B3%B4%ED%97%98" target="_blank" rel="noopener" class="reference-link">
+                    <span>나무위키 어린이보험 정의, 특약 변천사 및 백과사전 해설서</span>
+                    <strong>바로가기</strong>
+                </a>
+                <a href="https://www.fss.or.kr" target="_blank" rel="noopener" class="reference-link">
+                    <span>금융감독원 공식 홈페이지 - 소비자 권익 보호 및 금융 정보 가이드</span>
+                    <strong>바로가기</strong>
+                </a>
+            </div>
+        </section>
+
     </main>
-  </body>
-</html>
+
+  
+    <script>
+        // FAQ 아코디언 애니메이션 스크립트
+        document.querySelectorAll('.accordion-header').forEach((header) => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isVisible = content.style.display === 'block';
+                
+                // 모든 다른 내용 닫기
+                document.querySelectorAll('.accordion-content').forEach((c) => {
+                    c.style.display = 'none';
+                });
+                
+                // 현재 누른 것만 열거나 닫기
+                if (!isVisible) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+            
+            header.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    header.click();
+                }
+            });
+        });
+
+        // 실시간 예산 바인딩용 인터랙티브 슬라이더 이벤트 수신기
+        const budgetSlider = document.getElementById('calc-budget');
+        const budgetValue = document.getElementById('budget-value');
+        
+        budgetSlider.addEventListener('input', (e) => {
+            budgetValue.textContent = Number(e.target.value).toLocaleString();
+        });
+
+        // 다차원 자가 예상 견적 시뮬레이터 로직 구현부
+        function calculatePremium() {
+            const age = parseInt(document.getElementById('calc-mother-age').value);
+            const weeks = parseInt(document.getElementById('calc-weeks').value);
+            const region = document.getElementById('calc-region').value;
+            const brand = document.getElementById('calc-brand').value;
+            const type = document.getElementById('calc-type').value;
+            const maturity = parseInt(document.getElementById('calc-maturity').value);
+            const budget = parseInt(document.getElementById('calc-budget').value);
+
+            // 가상 계산 기본 팩터 세팅
+            let basePremium = 40000;
+            let refundFactor = 0.4;
+
+            // 1. 산모 연령에 따른 편차 반영
+            if (age === 40) {
+                basePremium += 12000;
+                refundFactor -= 0.05;
+            } else if (age === 20) {
+                basePremium -= 4000;
+                refundFactor += 0.02;
+            }
+
+            // 2. 만기 연도에 따른 가중치
+            if (maturity === 100) {
+                basePremium += 35000;
+                refundFactor += 0.25;
+            }
+
+            // 3. 상품 종류에 따른 구조 조정
+            if (type === 'pure') {
+                basePremium -= 15000;
+                refundFactor = 0.0;
+            } else if (type === 'full-refund') {
+                basePremium += 25000;
+                refundFactor += 0.2;
+            } else if (type === 'low-refund') {
+                basePremium += 5000;
+                refundFactor += 0.1;
+            }
+
+            // 4. 주차 제한 패널티
+            if (weeks === 23) {
+                basePremium -= 5000; // 태아 특약 제한으로 가입 범위 감소
+            }
+
+            // 5. 체크박스 선택 사항 가중
+            if (document.getElementById('rider-선천').checked) basePremium += 4000;
+            if (document.getElementById('rider-저체중').checked) basePremium += 3500;
+            if (document.getElementById('rider-질병').checked) basePremium += 6000;
+            if (document.getElementById('rider-실비').checked) basePremium += 12000;
+
+            // 최저치 최고치 필터링
+            if (basePremium < 25000) basePremium = 25000;
+
+            // 총 납입금 산출 (20년납 가정 = 240개월)
+            const totalPaid = basePremium * 240;
+            const expectedRefund = Math.round(totalPaid * refundFactor);
+
+            // 결과 화면 데이터 연동 및 시각화 전환
+            document.getElementById('res-premium').textContent = Math.round(basePremium).toLocaleString() + '원';
+            document.getElementById('res-refund-rate').textContent = (refundFactor * 100).toFixed(1) + '%';
+            document.getElementById('res-refund-amount').textContent = expectedRefund.toLocaleString() + '원';
+
+            // 적합도 등급 부여 판정
+            let grade = '보통';
+            if (basePremium <= budget) {
+                grade = '매우 적합';
+            } else if (basePremium <= budget + 15000) {
+                grade = '안정적 보장 권장';
+            } else {
+                grade = '예산 초과 대비 조율 요망';
+            }
+            document.getElementById('res-grade').textContent = grade;
+
+            // 서서히 보이기
+            const resBox = document.getElementById('calc-result');
+            resBox.style.display = 'block';
+        }
+    </script>
+  
